@@ -1,5 +1,8 @@
 package com.ll.basic.domain.home.home.controller;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -90,4 +93,18 @@ public class HomeController {
     public String[] getArray(){
         return new String[]{"a", "b", "c", "d"};
     }
+
+    @GetMapping("/article")
+    @ResponseBody
+    public Article getArticle(){
+        return new Article(1);
+    }
+}
+
+@AllArgsConstructor
+@Getter
+@Setter
+class Article{
+    private long id;
+
 }
